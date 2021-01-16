@@ -1,0 +1,35 @@
+<div *ngFor="let person of personList">
+    <div class="card" *ngIf="person.firstName === search || search === ''">
+        <div class="card-header bg-dark text-info">
+            Personal Details
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>First Name : </th>
+                    <td>{{person.firstName}}</td>
+                </tr>            
+                <tr>
+                    <th>Last Name : </th>
+                    <td>{{person.lastName}}</td>
+                </tr>
+                <tr>
+                    <th>City Name : </th>
+                    <td>{{person.city}}</td>
+                </tr>
+                <tr>
+                    <th>Age : </th>
+                    <td>{{person.age}}</td>
+                </tr>
+                <tr>
+                    <th>Mobile No : </th>
+                    <td>{{person.mobileNo}}</td>
+                </tr>
+                <tr>
+                    <th>Email : </th>
+                    <td>{{person.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
