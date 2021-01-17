@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'profile-app'; 
 
+  msgType : String = 'danger';
+
   searchString : String = "";
   friends : String[] = ["keyur","denish","vnit","ravi"];
 
