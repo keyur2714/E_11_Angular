@@ -1,0 +1,8 @@
+<!-- <input type="text" name=string class="form-control" [(ngModel)]="str"/>
+{{str}} -->
+<select name="myDropDown" class="form-control" [(ngModel)]="selectedItem" (change)="setValue()">
+    <option value="-1">-:Select Value:-</option>
+    <option *ngFor="let data of dataList" [ngValue]="data">
+        {{data.description}}
+    </option>
+</select>

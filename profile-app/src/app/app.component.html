@@ -1,10 +1,28 @@
 <div class="container">
   <div class="row form-group">
+    <div class="col">Select Country :-</div>
+    <div class="col">
+      <app-my-dropdown [selectedItem]="countryList[2]" [dataList]="countryList" (getSelectedItem)="getSelectedCountry($event)"></app-my-dropdown>
+    </div>
+    <div class="col">
+      Selected Country is : {{selectedCountry.description}}
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">Select States :-</div>
+    <div class="col">
+        <app-my-dropdown [selectedItem]="stateList[0]" [dataList]="stateList" (getSelectedItem)="getSelectedStates($event)"></app-my-dropdown>
+    </div>
+    <div class="col">
+        Selected State is : {{selectedState.description}}
+    </div>
+  </div>
+  <div class="row form-group">
     <div class="col"> 
       <app-message [message-type]="'dark'"></app-message>
     </div>
     <div class="col">
-      <app-message [message]="'Hello Good Afternoon...!'" [message-type]="'warning'"></app-message>
+      <app-message [message]="'Hello Good Afternoon...!'" [message-type]="'warning'" (getFormattedMessage)="getMessage($event)"></app-message>
     </div>
     <div class="col">
       <app-message message="Welcome to Agular World...!" [message-type]="msgType"></app-message>

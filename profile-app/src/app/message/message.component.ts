@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message',
@@ -7,12 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
+  //property / attribute
   @Input("message") msg : String = 'Hello Radhe Krishna...!';
+  //property / attribute
   @Input("message-type") msgType : String = 'info';
+
+  @Output("getFormattedMessage") getFormattedMsg = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
+    //alert(1);
+    this.getFormattedMsg.emit("Hello From Child..."+this.msg);
   }
 
 }
