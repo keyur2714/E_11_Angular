@@ -1,0 +1,36 @@
+<app-my-data-table 
+    [dataList]="courseList"
+    [headerList]="headerList"
+    [fieldList]="fieldList"
+    (getSelectedRow)="getSelectedCourse($event)"
+    >
+</app-my-data-table>
+<div class="row" *ngIf="selectedCourse.id !== undefiend">
+        <div class="col">
+            <ul>
+                <li>{{selectedCourse.id}}</li>
+                <li>{{selectedCourse.courseCode}}</li>
+                <li>{{selectedCourse.courseName}}</li>
+                <li>{{selectedCourse.fees}}</li>                
+            </ul>
+        </div>
+    </div>
+<!-- <table class="table table-striped text-primary">
+    <thead class="bg-secondary text-warning">
+        <tr>
+            <th>Id</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courseList">
+            <td>{{course.id}}</td>
+            <td>{{course.courseCode}}</td>
+            <td>{{course.courseName}}</td>
+            <td>{{course.fees}}</td>
+        </tr>
+    </tbody>
+
+</table> -->

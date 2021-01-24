@@ -1,0 +1,41 @@
+<app-my-data-table 
+    [dataList]="studentList"
+    [headerList]="headerList"
+    [fieldList]="fieldList"
+    textColor="warning"
+    bgColor="secondary"
+    (getSelectedRow)="getSelectedStudent($event)"
+    >
+</app-my-data-table>
+<div class="row" *ngIf="selectedStudent.id !== undefiend">
+    <div class="col">
+        <ul>
+            <li>{{selectedStudent.id}}</li>
+            <li>{{selectedStudent.name}}</li>
+            <li>{{selectedStudent.mobileNo}}</li>
+            <li>{{selectedStudent.email}}</li>
+            <li>{{selectedStudent.course}}</li>
+        </ul>
+    </div>
+</div>
+<!-- <table class="table table-striped text-info">
+        <thead class="bg-secondary text-warning">
+            <tr>
+                <th>Id </th>
+                <th>Name</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody class="bg-warning">
+            <tr *ngFor="let student of studentList">
+                <td>{{student.id}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.mobileNo}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.course}}</td>
+            </tr>
+        </tbody>
+    
+    </table> -->

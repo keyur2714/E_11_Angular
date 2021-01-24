@@ -1,0 +1,12 @@
+<table class="table table-striped text-{{textColor}} bg-{{bgColor}}">
+        <thead>
+            <tr>
+                <th *ngFor="let header of headerList">{{header}}</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of dataList;let idx=index" (click)="getSelectedRow(idx)" [class.selected]="sitem === data ? 'selected' : ''">
+                <td *ngFor="let field of fieldList">{{data[field]}}</td>                
+            </tr>
+        </tbody>    
+</table>

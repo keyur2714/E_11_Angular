@@ -1,0 +1,74 @@
+	Angular - 8
+
+	Setup   --- Done
+	Git Repository / Basic Git Commands --- Done
+	CLI Basic Commands --- Done
+	First Demo Application  --- Done
+	add bootstrap in demo application --- Done
+	basic idea of bootstrap --- Done
+	Flow of Execution with angular.json --- Done
+	create component --- Done
+	play with component --- Done
+	inbuilt dirctive / ngIf / ngFor / ngClass --- Done
+	create component without html --- Done
+	create model class --- Done
+	create Array of string/numbers --- Done
+	create Array of Objects ---Done
+	simple application of CRUD with in memory/array --- Done
+	Data Binding
+		- one way -- Done
+		- two way -- Done 
+	2. Component Communications -- 
+		- @Input() : Parent to child / property --- Done
+		- @Output() : Child to Parent / Events ---  Done
+		- @ViewChild() : Ref of Elements/coponent selectors --- Done
+	3. Custom Directives
+		- Simple Directive -- Done
+		- Attribute Directive -- Done
+		- Structural Directive --- Done
+	4. Forms
+		- Template Driven Forms  - Done
+		- Reactive  Forms - Done
+		- Forms Validations - Done
+	5. Observables & RX JS Basic Operators - 
+		- interval()
+		- of()
+		- map()
+		- filter()
+		- catchError()
+		- Subscription()
+		- tap()
+		- Pipe()
+	6. DI (Dependency Injection) & Services - 
+	7. JSON Server - for create dummy web services - 
+		- How to use POST MAN - 
+	8. Http Client Module (CRUD) - 
+		- Get
+		- Post
+		- Put
+		- Delete
+	9. Session Storage/Local Storage & Cookie Understanding - 
+	- Object Parsing.
+	10. JWT Introductin -  -- Node JS -- 
+	11. Interceptor in HttpClientModule with Login Authentication -
+	12.Router - For Navigation	- 
+	13.Route Guards - for Authorizations -  
+	15. Custom Modules and it's communications -
+	16. Lazy Loading & Eager Loading in Modules - 
+	17. Pipes - for Data Transform. it's like Filter - 
+		- Inbuilt Pipes - 
+		- Custom Pipes - 
+	18. Angular Material
+		- setup	
+		- how to use basic component
+		- DATA Table / Model Dialog / Buttons		
+	19. Animations		
+		- custom Animations
+		- component Animations
+	20. Unit Testing
+		- Jasmin
+		- Karma
+	21. E2E Testing Undrestanding
+	22. Basic Usecase Project with Forms Module/Http Client Module/Router and Login authentication & authorization 
+	23. Deployments with some Local Server like Tomcat/WAMP ---- 
+			
