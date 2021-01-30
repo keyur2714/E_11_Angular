@@ -6,6 +6,7 @@ import { MyDataTableComponent } from './my-data-table/my-data-table.component';
 import { CourseComponent } from './course/course.component';
 import { StudentsComponent } from './students/students.component';
 import { DemoComponent } from './demo.component';
+import { DeptListComponent } from './dept-list/dept-list.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DemoComponent } from './demo.component';
     MyDataTableComponent,
     CourseComponent,
     StudentsComponent,
-    DemoComponent
+    DemoComponent,
+    DeptListComponent
   ],
   imports: [
     BrowserModule

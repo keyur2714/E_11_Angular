@@ -1,0 +1,18 @@
+<app-my-data-table 
+    [dataList]="deptList"
+    [headerList]="headerList"
+    [fieldList]="fieldList"  
+    [textColor]="'white'"  
+    bgColor="secondary"
+    (getSelectedRow)="getSelectedDept($event)"
+    >
+</app-my-data-table>
+<div class="row" *ngIf="selectedDept.id !== undefiend">
+    <div class="col">
+        <ul>
+            <li>{{selectedDept.id}}</li>
+            <li>{{selectedDept.deptCode}}</li>
+            <li>{{selectedDept.deptName}}</li>                          
+        </ul>
+    </div>
+</div>
