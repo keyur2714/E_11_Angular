@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 #heading>Hello Radhe Krishna...!</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message>Message : </app-message>      
+    </div>
+    <div class="col">
+      <button (click)="revMsg()" class="btn btn-info">Reverse Message</button>
+    </div>
+    <div class="col">
+      Message from Parent : {{reverseMsg}}
+    </div>
+  </div>
+</div>
