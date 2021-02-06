@@ -14,14 +14,16 @@
 	create model class --- Done
 	create Array of string/numbers --- Done
 	create Array of Objects ---Done
-	simple application of CRUD with in memory/array --- Done
+	
+	simple application of CRUD with in memory/array --- 
+	
 	Data Binding
 		- one way -- Done
 		- two way -- Done 
 	2. Component Communications -- 
 		- @Input() : Parent to child / property --- Done
 		- @Output() : Child to Parent / Events ---  Done
-		- @ViewChild() : Ref of Elements/coponent selectors --- Done
+		- @ViewChild() : Ref of Elements/coponent selectors --- 
 	3. Custom Directives
 		- Simple Directive -- Done
 		- Attribute Directive -- Done
@@ -36,8 +38,7 @@
 		- map()
 		- filter()
 		- catchError()
-		- Subscription()
-		- tap()
+		- Subscription()		
 		- Pipe()
 	6. DI (Dependency Injection) & Services - 
 	7. JSON Server - for create dummy web services - 
@@ -67,8 +68,7 @@
 		- component Animations
 	20. Unit Testing
 		- Jasmin
-		- Karma
-	21. E2E Testing Undrestanding
-	22. Basic Usecase Project with Forms Module/Http Client Module/Router and Login authentication & authorization 
-	23. Deployments with some Local Server like Tomcat/WAMP ---- 
+		- Karma	
+	21. Basic Usecase Project with Forms Module/Http Client Module/Router and Login authentication & authorization 
+	22. Deployments with some Local Server like Tomcat/WAMP ---- 
 			

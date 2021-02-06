@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row form-group">
+    <div class="col">
+      <h1>Directive Demo - {{employee.empName}}</h1>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <p appColor color="green" [backGroundColor]="'pink'" fontSize="20px">Hello Radhe Krishna....!</p>
+    </div>
+    <div class="col">
+      <h4 appColor [color]="'pink'">Hi How are you?</h4>
+    </div>
+    <div class="col">
+      <input type="text" appColor value="sachin">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <input type="text" name=name class="form-control" appColor req/>
+    </div>
+    <div class="col">
+      <input type="text" name=name value="keyur" class="form-control" appColor req/>
+    </div>
+  </div>
+  <div class="row" *appMyif="1==1">
+    <div class="col">
+      Hello
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <p *appMyloop=5>
+        Good Afternoon...!
+      </p>
+    </div>
+  </div>
+</div>
