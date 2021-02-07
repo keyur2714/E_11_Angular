@@ -1,0 +1,69 @@
+<form #f=ngForm (ngSubmit)="save(f)">    
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <sup>*</sup>Name : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=name class="form-control" ngModel required #name=ngModel>            
+        </div>
+        <div class="col-sm-4" *ngIf="name.invalid && name.touched" ngClass="error">
+            Name is Mandatory Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Email : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=email class="form-control" ngModel required email #email=ngModel>            
+        </div>
+        <div class="col-sm-4" *ngIf="email.invalid && email.touched" ngClass="error">
+            <span *ngIf="email.errors['required']">Email is Mandatory Field.</span>
+            <span *ngIf="email.errors['email']">Invalid Email Address.</span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <sup>*</sup>Mobile No : 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=mobileNo class="form-control" ngModel required #mobileNo=ngModel minlength="10" maxlength="10" pattern="^[0-9]+$">            
+        </div>
+        <div class="col-sm-4" *ngIf="mobileNo.invalid && mobileNo.touched" ngClass="error">
+            <span *ngIf="mobileNo.errors['required']">Mobile no is Mandatory Field.</span>
+            <span *ngIf="mobileNo.errors['minlength']">Min 10 Digit required.</span>
+            <span *ngIf="mobileNo.errors['pattern']">Only Digits allowed in mobile number.</span>
+        </div>
+    </div>
+    <div class="row form-group">        
+            <div class="col-sm-4">
+                Gender :
+            </div>
+            <div class="col-sm-4">
+                <input type="radio" name=gender class="radio-inline" value=M ngModel> Male
+                <input type="radio" name=gender class="radio-inline" value=F ngModel> Female
+            </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course :
+        </div>
+        <div class="col-sm-4">
+            <select name="course" ngModel class="form-control">
+                <option value="-1">-:Select Course:-</option>        
+                <option *ngFor="let course of courseList" [ngValue]="course">{{course.courseName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col">
+            <button class="btn btn-info" >Submit</button>
+        </div>
+    </div>
+</form>
+
+<div class="row form-group" *ngIf="isSubmitted">
+    <div class="col">
+        Iquiry Done for Student : {{inquiry.name}}
+    </div>  
+</div>
