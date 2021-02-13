@@ -4,7 +4,7 @@
             <sup>*</sup>Name : 
         </div>
         <div class="col-sm-4">
-            <input type="text" name=name class="form-control" ngModel required #name=ngModel>            
+            <input type="text" name=name class="form-control" [(ngModel)]="inquiry.name" required #name=ngModel>            
         </div>
         <div class="col-sm-4" *ngIf="name.invalid && name.touched" ngClass="error">
             Name is Mandatory Field.
@@ -15,7 +15,7 @@
             Email : 
         </div>
         <div class="col-sm-4">
-            <input type="text" name=email class="form-control" ngModel required email #email=ngModel>            
+            <input type="text" name=email class="form-control" [(ngModel)]="inquiry.email" required email #email=ngModel>            
         </div>
         <div class="col-sm-4" *ngIf="email.invalid && email.touched" ngClass="error">
             <span *ngIf="email.errors['required']">Email is Mandatory Field.</span>
@@ -27,7 +27,7 @@
             <sup>*</sup>Mobile No : 
         </div>
         <div class="col-sm-4">
-            <input type="text" name=mobileNo class="form-control" ngModel required #mobileNo=ngModel minlength="10" maxlength="10" pattern="^[0-9]+$">            
+            <input type="text" name=mobileNo class="form-control" [(ngModel)]="inquiry.mobileNo" required #mobileNo=ngModel minlength="10" maxlength="10" pattern="^[0-9]+$">            
         </div>
         <div class="col-sm-4" *ngIf="mobileNo.invalid && mobileNo.touched" ngClass="error">
             <span *ngIf="mobileNo.errors['required']">Mobile no is Mandatory Field.</span>
@@ -40,8 +40,8 @@
                 Gender :
             </div>
             <div class="col-sm-4">
-                <input type="radio" name=gender class="radio-inline" value=M ngModel> Male
-                <input type="radio" name=gender class="radio-inline" value=F ngModel> Female
+                <input type="radio" name=gender class="radio-inline" value=M [(ngModel)]="inquiry.gender"> Male
+                <input type="radio" name=gender class="radio-inline" value=F [(ngModel)]="inquiry.gender"> Female
             </div>        
     </div>
     <div class="row form-group">
@@ -49,7 +49,7 @@
             Course :
         </div>
         <div class="col-sm-4">
-            <select name="course" ngModel class="form-control">
+            <select name="course" [(ngModel)]="inquiry.course" class="form-control">
                 <option value="-1">-:Select Course:-</option>        
                 <option *ngFor="let course of courseList" [ngValue]="course">{{course.courseName}}</option>
             </select>
@@ -58,12 +58,36 @@
     <div class="row form-group">
         <div class="col">
             <button class="btn btn-info" >Submit</button>
+            <button class="btn btn-default" type="button" (click)="cancel(f)">Cancel</button>
         </div>
     </div>
 </form>
 
 <div class="row form-group" *ngIf="isSubmitted">
     <div class="col">
-        Iquiry Done for Student : {{inquiry.name}}
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name : </th>
+                    <td>{{inquiry.name}}</td>
+                </tr>                
+                <tr>
+                    <th>Email : </th>
+                    <td>{{inquiry.email}}</td>
+                </tr>                
+                <tr>
+                    <th>Mobile No : </th>
+                    <td>{{inquiry.mobileNo}}</td>
+                </tr>                
+                <tr>
+                    <th>gender : </th>
+                    <td>{{inquiry.gender === 'M' ? 'Male' : 'Female'}}</td>
+                </tr>                
+                <tr>
+                    <th>Course : </th>
+                    <td>{{inquiry.course.courseName}}</td>
+                </tr>                
+            </thead>
+        </table>
     </div>  
 </div>

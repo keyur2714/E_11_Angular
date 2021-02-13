@@ -1,0 +1,55 @@
+<div class="row" *ngIf="isSubmitted">
+    <div class="col alert alert-info">User Created with Name : {{user.name}}</div>
+</div>
+<form [formGroup]="userForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Name :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=name [formControlName]="'name'" class="form-control">
+        </div>
+        <div class="col-sm-4" *ngIf="userForm.get('name').invalid && userForm.get('name').touched">
+            <span *ngIf="userForm.get('name').errors['required']">Name is required field.</span>
+            <span *ngIf="userForm.get('name').errors['minlength']">min 3 Char Name is required.</span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            City :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=city [formControlName]="'city'" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Mobile No :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=mobileNo [formControlName]="'mobileNo'" class="form-control">
+        </div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Email :
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name=email [formControlName]="'email'" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Gender :
+        </div>
+        <div class="col-sm-4">
+            <input type="radio" name=gender [formControlName]="'gender'" value='M' class="radio-inline">Male
+            <input type="radio" name=gender [formControlName]="'gender'" value='F' class="radio-inline">Female
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col">
+            <button class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
+        </div>
+    </div>
+</form>
