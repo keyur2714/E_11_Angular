@@ -1,0 +1,34 @@
+{
+  "users":[
+	{
+		"id": 28,
+		"username":"hiren",
+		"password":"dummy"
+	},
+	{
+		"id": 21,
+		"username":"dinesh",
+		"password":"dummy1"
+	}
+  ],  
+  "students": [
+    {
+      "id": 1,
+      "rolNo": 27,
+      "name": "keyur",
+      "city": "pune"
+    },
+    {
+      "id": 2,
+      "rolNo": 26,
+      "name": "Ravi",
+      "city": "Bardoli"
+    },
+    {
+      "id": 4,
+      "rolNo": 21,
+      "name": "Ami",
+      "city": "surat"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { User } from './user.model';
+import { Student } from './student.model';
 
 @Component({
   selector: 'app-user',
@@ -10,13 +11,35 @@ import { User } from './user.model';
 export class UserComponent implements OnInit {
 
   userForm : FormGroup;
+  studentForm : FormGroup;
   isSubmitted : boolean = false;
   user : User = new User();
 
-  constructor() { }
+  constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit() {
-    this.createUserForm();
+    //this.createUserForm();
+    this.createUserFormWithBuilder();
+    this.createStudentForm();
+  }
+
+  createStudentForm() : void{
+    this.studentForm = this.formBuilder.group(new Student());
+    this.studentForm.get('rollNo').setValidators(Validators.required);
+  }
+
+  createUserFormWithBuilder() : void {
+    this.userForm = this.formBuilder.group(
+      {
+        name : this.formBuilder.control('keyur',[Validators.required,Validators.minLength(3)]),
+        city : this.formBuilder.control('',Validators.required),
+        mobileNo : this.formBuilder.control('',[Validators.minLength(10),Validators.required,Validators.pattern('^[0-9]+$'),Validators.maxLength(10)]),
+        email : this.formBuilder.control('',[Validators.required,Validators.email]),
+        gender : this.formBuilder.control('M'),
+        favColor : this.formBuilder.control(''),
+        hobbies : this.formBuilder.array([this.formBuilder.control('')])
+      }
+    )
   }
 
   createUserForm() : void{
@@ -24,9 +47,10 @@ export class UserComponent implements OnInit {
       {
         name : new FormControl('keyur',[Validators.required,Validators.minLength(3)]),
         city : new FormControl('',Validators.required),
-        mobileNo : new FormControl('',[Validators.minLength(10),Validators.required,Validators.pattern('^[0-9]+$')]),
+        mobileNo : new FormControl('',[Validators.minLength(10),Validators.required,Validators.pattern('^[0-9]+$'),Validators.maxLength(10)]),
         email : new FormControl('',[Validators.required,Validators.email]),
-        gender : new FormControl('M')
+        gender : new FormControl('M'),
+        hobbies : new FormArray([new FormControl('')])
       }
     );
   }
@@ -36,6 +60,24 @@ export class UserComponent implements OnInit {
       console.log(this.userForm.value);
       this.isSubmitted = true;
       this.user = this.userForm.value;
+      if(this.user.gender === 'M')
+        this.user.gender = 'Male';
+      else  
+        this.user.gender = 'Female';
     }
+  }
+
+  setValidation() : void{
+    //alert(this.userForm.get('gender').value);
+    if(this.userForm.get('gender').value === 'M'){
+      this.userForm.get('favColor').setValidators(Validators.required);
+      this.userForm.get('favColor').updateValueAndValidity();
+    }
+  }
+
+  addNewHobby() : void{
+    //let newHobby = new FormControl('');
+    let newHobby = this.formBuilder.control('');
+    (<FormArray>this.userForm.get('hobbies')).push(newHobby);
   }
 }

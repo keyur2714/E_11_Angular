@@ -1,55 +1,134 @@
+<form [formGroup]="studentForm">
+    <div class="row form-group">
+        <div class="col-sm-4">RollNo : </div>
+        <div class="col-sm-4"><input type="text" formControlName="rollNo" class="form-control" name=rollNo></div>        
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">Name : </div>
+        <div class="col-sm-4"><input type="text" [formControlName]="'name'" class="form-control" name=name></div>        
+    </div>
+</form>
+<hr>
 <div class="row" *ngIf="isSubmitted">
     <div class="col alert alert-info">User Created with Name : {{user.name}}</div>
 </div>
-<form [formGroup]="userForm" (ngSubmit)="save()">
-    <div class="row form-group">
-        <div class="col-sm-4">
-            Name :
+<div *ngIf="!isSubmitted">
+    <form [formGroup]="userForm" (ngSubmit)="save()">
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Name :
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name=name [formControlName]="'name'" class="form-control">
+            </div>
+            <div class="col-sm-4" *ngIf="userForm.get('name').invalid && userForm.get('name').touched">
+                <span *ngIf="userForm.get('name').errors['required']">Name is required field.</span>
+                <span *ngIf="userForm.get('name').errors['minlength']">min 3 Char Name is required.</span>
+            </div>
         </div>
-        <div class="col-sm-4">
-            <input type="text" name=name [formControlName]="'name'" class="form-control">
+        <div class="row form-group">
+            <div class="col-sm-4">
+                City :
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name=city [formControlName]="'city'" class="form-control">
+            </div>
+            <div class="col-sm-4" *ngIf="userForm.get('city').invalid && userForm.get('city').touched">
+                City is Mandatory Field.
+            </div>
         </div>
-        <div class="col-sm-4" *ngIf="userForm.get('name').invalid && userForm.get('name').touched">
-            <span *ngIf="userForm.get('name').errors['required']">Name is required field.</span>
-            <span *ngIf="userForm.get('name').errors['minlength']">min 3 Char Name is required.</span>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Mobile No :
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name=mobileNo [formControlName]="'mobileNo'" class="form-control">
+            </div>  
+            <div class="col-sm-4" *ngIf="userForm.get('mobileNo').invalid && userForm.get('mobileNo').touched">
+                <span *ngIf="userForm.get('mobileNo').errors['required']">Mobile Number is required field.</span>
+                <span *ngIf="userForm.get('mobileNo').errors['pattern']">Invalid Mobile Number.</span>
+                <span *ngIf="userForm.get('mobileNo').errors['minlength']">Mobile Number should be 10 Digit.</span>
+            </div>      
         </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Email :
+            </div>
+            <div class="col-sm-4">
+                <input type="text" name=email [formControlName]="'email'" class="form-control">
+            </div>
+            <div class="col-sm-4" *ngIf="userForm.get('email').invalid && userForm.get('email').touched">
+                <span *ngIf="userForm.get('email').errors['required']">Email is required field.</span>
+                <span *ngIf="userForm.get('email').errors['email']">Invalid Email Address.</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Gender :
+            </div>
+            <div class="col-sm-4">
+                <input type="radio" name=gender [formControlName]="'gender'" value='M' class="radio-inline" (click)="setValidation()">Male
+                <input type="radio" name=gender [formControlName]="'gender'" value='F' class="radio-inline" (click)="setValidation()">Female
+            </div>
+        </div>
+        <div class="row form-group" *ngIf="userForm.get('gender').value === 'F'">
+            <div class="col-sm-4">Favourite Color :</div>
+            <div class="col-sm-4"><input type="text" name=favColor formControlName="favColor" class="form-control"></div>
+        </div>
+        <div formArrayName="hobbies">    
+            <div class="row form-group" *ngFor="let control of userForm.get('hobbies').controls;let i=index">
+                <div class="col-sm-4">
+                    Hobby - {{i+1}} :
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" [formControlName]="i" class="form-control" name=hobby>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success" type="button" (click)="addNewHobby()">Add More</button>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col">
+                <button class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row" *ngIf="isSubmitted">
+    <div class="col">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name: </th>
+                <td>{{user.name}}</td>
+            </tr>
+            <tr>
+                <th>City: </th>
+                <td>{{user.city}}</td>
+            </tr>
+            <tr>
+                <th>Mobile Number: </th>
+                <td>{{user.mobileNo}}</td>
+            </tr>    
+            <tr>
+                <th>Email: </th>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <th>Gender: </th>
+                <td>{{user.gender}}</td>
+            </tr>
+            <tr>
+                <th>Hobbies: </th>
+                <td>
+                    <ul>
+                        <li *ngFor="let hobby of user.hobbies">
+                            {{hobby}}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
     </div>
-    <div class="row form-group">
-        <div class="col-sm-4">
-            City :
-        </div>
-        <div class="col-sm-4">
-            <input type="text" name=city [formControlName]="'city'" class="form-control">
-        </div>
-    </div>
-    <div class="row form-group">
-        <div class="col-sm-4">
-            Mobile No :
-        </div>
-        <div class="col-sm-4">
-            <input type="text" name=mobileNo [formControlName]="'mobileNo'" class="form-control">
-        </div>        
-    </div>
-    <div class="row form-group">
-        <div class="col-sm-4">
-            Email :
-        </div>
-        <div class="col-sm-4">
-            <input type="text" name=email [formControlName]="'email'" class="form-control">
-        </div>
-    </div>
-    <div class="row form-group">
-        <div class="col-sm-4">
-            Gender :
-        </div>
-        <div class="col-sm-4">
-            <input type="radio" name=gender [formControlName]="'gender'" value='M' class="radio-inline">Male
-            <input type="radio" name=gender [formControlName]="'gender'" value='F' class="radio-inline">Female
-        </div>
-    </div>
-    <div class="row form-group">
-        <div class="col">
-            <button class="btn btn-success" [disabled]="userForm.invalid">Submit</button>
-        </div>
-    </div>
-</form>
+</div>

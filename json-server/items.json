@@ -1,0 +1,22 @@
+{
+	"items" : [
+		{
+			"id" : 1,
+			"itemCode" : "TEA",
+			"itemName" : "Ginger Tea",
+			"price" : 10			
+		},
+		{
+			"id" : 2,
+			"itemCode" : "GTEA",
+			"itemName" : "Green Tea",
+			"price" : 15			
+		},
+		{
+			"id" : 3,
+			"itemCode" : "COFFEE",
+			"itemName" : "Hot Coffee",
+			"price" : 20			
+		}
+	]
+}

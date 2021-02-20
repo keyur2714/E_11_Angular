@@ -1,0 +1,90 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "keyur",
+      "password": "India@27",
+      "role": "admin",
+      "token": "keyurjava"
+    },
+    {
+      "id": 2,
+      "username": "denish",
+      "password": "JayHind@26",
+      "role": "user",
+      "token": "denishjava"
+    },
+    {
+      "id": 3,
+      "username": "vinit",
+      "password": "Hindustan@44",
+      "role": "user",
+      "token": "vinit2cute"
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "code": "GNTEA",
+      "itemName": "Ginger Tea",
+      "price": 15
+    },
+    {
+      "id": 2,
+      "code": "GTEA",
+      "itemName": "Green Tea",
+      "price": 10
+    },
+    {
+      "id": 3,
+      "code": "MTEA",
+      "itemName": "Massala Tea",
+      "price": 20
+    },
+    {
+      "id": 4,
+      "code": "TEA",
+      "itemName": "Regular Tea",
+      "price": 10
+    },
+    {
+      "id": 5,
+      "code": "COFFEE",
+      "itemName": "Hot Coffee",
+      "price": 20
+    },
+    {
+      "id": 6,
+      "code": "BCOFFEE",
+      "itemName": "Black Coffee",
+      "price": 25
+    }
+  ],
+  "orderDetails": [
+    {
+      "id": 1,
+      "items": [
+        {
+          "code": "GNTEA",
+          "price": 15,
+          "qty": 2
+        },
+        {
+          "code": "COFFEE",
+          "price": 20,
+          "qty": 2
+        }
+      ]
+    }
+  ],
+  "billDetails": [
+    {
+      "id": 1,
+      "date": "2020-09-03",
+      "orderId": 1,
+      "total": 35,
+      "GST": 1.75,
+      "finalTotal": 36.75
+    }
+  ]
+}

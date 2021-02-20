@@ -1,0 +1,8 @@
+	
+	JSON-SERVER for Fake Backend API or Dummy Web Services
+	
+	npm install -g json-server
+		
+	json-server -v
+	
+	json-server --watch personal-info.json
