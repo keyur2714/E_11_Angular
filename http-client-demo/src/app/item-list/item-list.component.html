@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item #</th>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.itemCode}}</td>
+            <td>{{item.itemName}}</td>
+            <td>{{item.price}}</td>
+        </tr>
+    </tbody>
+</table>
