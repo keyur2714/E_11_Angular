@@ -1,4 +1,4 @@
-{  
+{
   "items": [
     {
       "id": 1,
@@ -16,43 +16,55 @@
       "id": 3,
       "itemCode": "COFFEE",
       "itemName": "Hot Coffee",
-      "price": 20
+      "price": 25
+    },
+    {
+      "id": "4",
+      "itemCode": "CR",
+      "itemName": "Cream Roll",
+      "price": 10
+    },
+    {
+      "id": "5",
+      "itemCode": "VP",
+      "itemName": "Veg Puff",
+      "price": 12
     }
   ],
-  "orders" : [
-	{
-		"id": 11,
-		"orderDate":"2021-02-21",
-		"items":[
-			{
-				"itemId":1,
-				"qty":2,
-				"price":24
-			},
-			{
-				"itemId":3,
-				"qty":1,
-				"price":20
-			}
-		],
-		"total":44	
-	},
-	{
-		"id": 12,
-		"orderDate":"2021-02-21",
-		"items":[
-			{
-				"itemId":2,
-				"qty":1,
-				"price":15
-			},
-			{
-				"itemId":3,
-				"qty":2,
-				"price":40
-			}
-		],
-		"total":55	
-	}
-  ]	
+  "orders": [
+    {
+      "id": 11,
+      "orderDate": "2021-02-21",
+      "items": [
+        {
+          "itemId": 1,
+          "qty": 2,
+          "price": 24
+        },
+        {
+          "itemId": 3,
+          "qty": 1,
+          "price": 20
+        }
+      ],
+      "total": 44
+    },
+    {
+      "id": 12,
+      "orderDate": "2021-02-21",
+      "items": [
+        {
+          "itemId": 2,
+          "qty": 1,
+          "price": 15
+        },
+        {
+          "itemId": 3,
+          "qty": 2,
+          "price": 40
+        }
+      ],
+      "total": 55
+    }
+  ]
 }

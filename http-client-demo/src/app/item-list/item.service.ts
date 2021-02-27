@@ -19,4 +19,20 @@ export class ItemService {
     //return of([item1,item2]);
     return this.httpClient.get<Item[]>(this.itemApiUrl);
   }
+
+  getItemById(itemId: number) : Observable<Item> {
+    return this.httpClient.get<Item>(this.itemApiUrl+"/"+itemId);
+  }
+
+  save(item : Item) : Observable<Item> { 
+    return this.httpClient.post<Item>(this.itemApiUrl,item);
+  }
+
+  update(item : Item) : Observable<Item> { 
+    return this.httpClient.put<Item>(this.itemApiUrl+"/"+item.id,item);
+  }
+
+  delete(itemId : number) : Observable<void> {
+    return this.httpClient.delete<void>(this.itemApiUrl+"/"+itemId);
+  }
 }
