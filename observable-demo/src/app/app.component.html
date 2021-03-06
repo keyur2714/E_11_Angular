@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row form-group">
+    <div class="col">
+      <h1>Observable Demo</h1>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      {{seqNo}}
+    </div>  
+    <div class="col">
+      <button class="btn btn-success" (click)="start()">Start</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-info" (click)="stop()">Stop</button>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <table class="table table-striped bg-dark text-info">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.itemName}}</td>
+            <td>{{item.price}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <ul>
+        <li *ngFor="let name of itemNames">
+          {{name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
