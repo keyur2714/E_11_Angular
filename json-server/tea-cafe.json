@@ -10,7 +10,7 @@
 		},
 		{
 			"id" : 2,
-			"name" : "denihs",
+			"name" : "denish",
 			"username" : "denish123",
 			"password" : "Bharat@123",
 			"role" : "USER",
@@ -21,49 +21,49 @@
 		{
 			"id" : 11,
 			"code" : "TEA",
-			"name" : "Regular Tea"
+			"name" : "Regular Tea",
 			"price" : 10
 		},
 		{
 			"id" : 12,
 			"code" : "STEA",
-			"name" : "Special Tea"
+			"name" : "Special Tea",
 			"price" : 15
 		},
 		{
 			"id" : 13,
 			"code" : "GTEA",
-			"name" : "Ginger Tea"
+			"name" : "Ginger Tea",
 			"price" : 20
 		},
 		{
 			"id" : 14,
 			"code" : "COFFEE",
-			"name" : "Hot Coffee"
+			"name" : "Hot Coffee",
 			"price" : 20
 		},
 		{
 			"id" : 15,
 			"code" : "CR",
-			"name" : "Cream Roll"
+			"name" : "Cream Roll",
 			"price" : 10
 		},
 		{
 			"id" : 16,
 			"code" : "VP",
-			"name" : "Veg Puff"
+			"name" : "Veg Puff",
 			"price" : 15
 		},
 		{
 			"id" : 17,
 			"code" : "PH",
-			"name" : "Pohe"
+			"name" : "Pohe",
 			"price" : 20
 		},
 		{
 			"id" : 18,
 			"code" : "IDL",
-			"name" : "Idli Sambhar"
+			"name" : "Idli Sambhar",
 			"price" : 20
 		}
 	]

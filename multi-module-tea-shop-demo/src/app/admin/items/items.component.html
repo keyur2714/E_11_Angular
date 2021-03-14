@@ -1,1 +1,13 @@
-<p>items works!</p>
+<div class="row">
+    <div class="col-sm-4"  *ngFor="let item of items">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">{{item.name}}</div>
+            <div class="card-body">
+                <img src="../../../assets/items/{{item.code}}.jpg" width="100px" height="100px">
+            </div>
+            <div class="card-footer">
+                {{item.price}}/-Rs
+            </div>
+        </div>
+    </div>
+</div>
