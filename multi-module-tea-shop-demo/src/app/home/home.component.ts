@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.isAuthenticated;
-    this.loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    this.loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));    
   }
 
 }

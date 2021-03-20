@@ -1,6 +1,9 @@
-Welcome...<span *ngIf="loggedInUser !== undefined">{{loggedInUser.name}}</span>
+Welcome...
+<span *ngIf="loggedInUser !== undefined && loggedInUser !== null">
+    {{loggedInUser.name}}
+</span>
 <div class="row" *ngIf="isAuthenticated">
     <div class="col">
-        <a [routerLink]="'/admin/items'">Show Items</a>
+        <a [routerLink]="'/allitems'">Show Items</a>
     </div>
 </div>

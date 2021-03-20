@@ -10,7 +10,10 @@ const routes : Routes = [
         children : [
             {path : 'items' , component : ItemsComponent},
             {path : 'orders' , component : OrdersComponent}
-        ]
+        ],        
+    },
+    {
+        path : 'allitems' , component : ItemsComponent, canActivate : [AuthGuardService]
     }
 ];
 @NgModule({
