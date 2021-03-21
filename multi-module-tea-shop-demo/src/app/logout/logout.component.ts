@@ -15,6 +15,7 @@ export class LogoutComponent implements OnInit {
     this.authenticationService.isAuthenticated = false;
     this.authenticationService.successUrl = 'home';
     sessionStorage.removeItem('loggedInUser');
+    sessionStorage.removeItem('orderItems');
     this.router.navigate(['login']);
   }
 

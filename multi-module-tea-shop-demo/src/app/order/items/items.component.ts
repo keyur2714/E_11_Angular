@@ -17,6 +17,10 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
     this.getItems();
+    if(sessionStorage.getItem("orderItems")){
+      this.cartItems = JSON.parse(sessionStorage.getItem("orderItems"));
+      alert(this.cartItems.length);
+    }
   }
 
   getItems() : void {
