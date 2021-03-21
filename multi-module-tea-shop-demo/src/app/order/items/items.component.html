@@ -1,8 +1,10 @@
-<div class="row">
+<div class="row form-group">
     <div class="col-sm-8"></div>
-    <div class="col-sm-4">Items in Cart: <a [routerLink]="'/cartDetail'">{{cartItems.length}}</a> </div>
+    <div class="col-sm-4 border-0">
+        Items in Cart: <a [routerLink]="'/cartDetail'"><span class="badge badge-success">{{cartItems.length}}</span></a> 
+    </div>
 </div>
-<div class="row">    
+<div class="row form-group">    
     <div class="col-sm-4"  *ngFor="let item of items">
         <div class="card">
             <div class="card-header bg-warning text-dark">{{item.name}}</div>

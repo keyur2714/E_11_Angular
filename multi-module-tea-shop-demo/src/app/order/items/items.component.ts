@@ -19,7 +19,7 @@ export class ItemsComponent implements OnInit {
     this.getItems();
     if(sessionStorage.getItem("orderItems")){
       this.cartItems = JSON.parse(sessionStorage.getItem("orderItems"));
-      alert(this.cartItems.length);
+      //alert(this.cartItems.length);
     }
   }
 
