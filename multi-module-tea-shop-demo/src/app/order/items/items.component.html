@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-8"></div>
-    <div class="col-sm-4">Items in Cart: </div>
+    <div class="col-sm-4">Items in Cart: <a [routerLink]="'/cartDetail'">{{cartItems.length}}</a> </div>
 </div>
 <div class="row">    
     <div class="col-sm-4"  *ngFor="let item of items">
@@ -11,7 +11,7 @@
             </div>
             <div class="card-footer">
                 {{item.price}}/-Rs - Qty : 
-                <select name="qty">
+                <select name="qty" #qty>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -19,7 +19,7 @@
                     <option value="5">5</option>
                 </select>
                 &nbsp;&nbsp;
-                <a>Add to Cart</a>
+                <button class="btn btn-success" (click)="addToCart(item,qty.value)">Add To Cart</button>
             </div>
         </div>
     </div>

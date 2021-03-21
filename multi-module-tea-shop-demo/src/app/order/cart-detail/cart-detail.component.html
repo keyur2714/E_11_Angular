@@ -1,0 +1,39 @@
+<div class="row form-group">
+    <div class="col">
+        Your Cart Detais : Total Items in Cart - {{totalItems}}
+    </div>
+    <div class="col">
+        Date : {{date | date : 'yyyy-MM-dd'}}
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr #</th>
+                    <th>Item Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                </tr>                
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartItem of cartItems">
+                    <td>{{cartItem.id}}</td>
+                    <td>{{cartItem.item.name}}</td>
+                    <td>{{cartItem.qty}}</td>
+                    <td>{{cartItem.item.price}}</td>                
+                </tr>
+                <tr>
+                    <td colspan="2">Total Items : {{totalItems}}</td>
+                    <td colspan="2">Total Bill Amount : {{totalBillAmount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <button class="btn btn-secondary" (click)=back()>Back</button>
+    </div>
+</div>

@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ItemsComponent } from './items/items.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AuthGuardService } from '../auth-guard.service';
+import { ItemListComponent } from './item-list/item-list.component';
 const routes : Routes = [
     {
         path : 'admin' , component : AdminComponent, canActivate : [AuthGuardService],canActivateChild : [AuthGuardService],
         children : [
-            {path : 'items' , component : ItemsComponent},
+            {path : 'items' , component : ItemListComponent},
             {path : 'orders' , component : OrdersComponent}
         ],        
-    },
-    {
-        path : 'allitems' , component : ItemsComponent, canActivate : [AuthGuardService]
-    }
+    }    
 ];
 @NgModule({
     imports : [RouterModule.forChild(routes)],

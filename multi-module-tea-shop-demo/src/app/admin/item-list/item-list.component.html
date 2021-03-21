@@ -1,0 +1,25 @@
+<app-item-entry [itemId]="itemId" (isSaved)="refreshItems($event)"></app-item-entry>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Item #</th>
+            <th>Item Code</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>    
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.code}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>
+                <button class="btn btn-success m-1" type="button" (click)=edit(item.id)>Edit</button>
+                <button class="btn btn-danger m-1" type="button" (click)=delete(item.id)>Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

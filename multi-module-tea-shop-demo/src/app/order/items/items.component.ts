@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../items.service';
 import { Item } from '../item.model';
+import { OrderItem } from '../order-item.model';
 
 @Component({
   selector: 'app-items',
@@ -10,6 +11,7 @@ import { Item } from '../item.model';
 export class ItemsComponent implements OnInit {
 
   items : Item[] = [];
+  cartItems : OrderItem[] = [];
 
   constructor(private itemService : ItemsService) { }
 
@@ -23,5 +25,14 @@ export class ItemsComponent implements OnInit {
         this.items = data;
       }
     )
+  }
+
+  addToCart(item: Item,qty : number): void{
+    let newCartItem = new OrderItem();
+    newCartItem.id = this.cartItems.length + 1;
+    newCartItem.item = item;
+    newCartItem.qty = qty;
+    this.cartItems.push(newCartItem);
+    sessionStorage.setItem("orderItems",JSON.stringify(this.cartItems));
   }
 }
