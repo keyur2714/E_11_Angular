@@ -66,5 +66,83 @@
       "name": "Idli Sambhar",
       "price": 20
     }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "orderDate": "2021-03-25T17:19:32.857Z",
+      "orderItems": [
+        {
+          "id": 1,
+          "item": {
+            "id": 11,
+            "code": "TEA",
+            "name": "Regular Tea",
+            "price": 10
+          },
+          "qty": "1"
+        },
+        {
+          "id": 2,
+          "item": {
+            "id": 12,
+            "code": "STEA",
+            "name": "Special Tea",
+            "price": 20
+          },
+          "qty": "2"
+        },
+        {
+          "id": 3,
+          "item": {
+            "id": 16,
+            "code": "VP",
+            "name": "Veg Puff",
+            "price": 15
+          },
+          "qty": "1"
+        }
+      ],
+      "totalItems": 3,
+      "totalBillAmount": 65
+    },
+    {
+      "id": 2,
+      "orderDate": "2021-03-25T17:25:34.779Z",
+      "orderItems": [
+        {
+          "id": 1,
+          "item": {
+            "id": 11,
+            "code": "TEA",
+            "name": "Regular Tea",
+            "price": 10
+          },
+          "qty": "2"
+        },
+        {
+          "id": 2,
+          "item": {
+            "id": 17,
+            "code": "PH",
+            "name": "Pohe",
+            "price": 20
+          },
+          "qty": "2"
+        },
+        {
+          "id": 3,
+          "item": {
+            "id": 16,
+            "code": "VP",
+            "name": "Veg Puff",
+            "price": 15
+          },
+          "qty": "2"
+        }
+      ],
+      "totalItems": 3,
+      "totalBillAmount": 90
+    }
   ]
 }
