@@ -171,6 +171,34 @@
       ],
       "totalItems": 2,
       "totalBillAmount": 30
+    },
+    {
+      "id": 4,
+      "orderDate": "2021-04-03T05:16:04.207Z",
+      "orderItems": [
+        {
+          "id": 1,
+          "item": {
+            "id": 11,
+            "code": "TEA",
+            "name": "Regular Tea",
+            "price": 10
+          },
+          "qty": "1"
+        },
+        {
+          "id": 2,
+          "item": {
+            "id": 12,
+            "code": "STEA",
+            "name": "Special Tea",
+            "price": 20
+          },
+          "qty": "2"
+        }
+      ],
+      "totalItems": 2,
+      "totalBillAmount": 50
     }
   ]
 }
