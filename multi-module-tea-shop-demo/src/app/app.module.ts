@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthInterceptorService } from './auth-interceptor.service';
-import { CartDetailComponent } from './order/cart-detail/cart-detail.component';
 import { OrderModule } from './order/order.module';
 
 @NgModule({
@@ -18,15 +17,14 @@ import { OrderModule } from './order/order.module';
     AppComponent,
     HomeComponent,    
     LoginComponent,
-    LogoutComponent,
-    CartDetailComponent,    
+    LogoutComponent,        
   ],
   imports: [
     BrowserModule,    
     FormsModule,
     HttpClientModule,
-    AdminModule,   
-    OrderModule,     
+    //AdminModule,  //for Eager Loading 
+    //OrderModule,  //for Eager Loading   
     AppRoutingModule        
   ],
   providers: [

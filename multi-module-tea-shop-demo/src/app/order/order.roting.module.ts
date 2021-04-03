@@ -3,13 +3,14 @@ import { ItemsComponent } from './items/items.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuardService } from '../auth-guard.service';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
-const routes = [
-    {
-        path : 'allitems' , component : ItemsComponent, canActivate : [AuthGuardService],        
-    },
-    {
-        path : 'cartDetail' , component : CartDetailComponent
-    }
+
+const routes = [                    
+        {
+            path : '' , component : ItemsComponent, canActivate : [AuthGuardService],        
+        },
+        {
+            path : 'cartDetail' , component : CartDetailComponent
+        }                
 ]
 @NgModule({
     imports : [RouterModule.forChild(routes)],
