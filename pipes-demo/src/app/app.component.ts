@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Observable } from 'rxjs';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,8 @@ export class AppComponent implements OnInit{
   seqNo : number = 0;
 
   numberObservable : Observable<number> = interval(1000);
+  
+  constructor(private testService : TestService){}
 
   ngOnInit(): void {
     // this.numberObservable.subscribe(
@@ -35,5 +38,14 @@ export class AppComponent implements OnInit{
     //   }
     // )
   }
+
+  sum(num1 : number,num2 : number) : number {
+    return num1 + num2;
+  }
+
+  mul(num1 : number,num2 : number) : number {  
+    return this.testService.mul(num1,num2);
+  }
+  
 
 }
